@@ -32,32 +32,109 @@
     <!-- YOUR CUSTOM CSS -->
     <link href="css/custom.css" rel="stylesheet">
 </head>
+<style>.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* altura total da tela */
+  overflow: hidden;
+}
+
+/* Imagem de fundo */
+.hero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* cobre toda a altura da .hero */
+  object-fit: cover; /* mantém proporção sem distorcer */
+  z-index: 1;
+  margin-top: 0 !important;
+}
+
+/* Camada escura */
+.hero .wrapper.opacity-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* cobre toda a imagem */
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.6); /* cor da máscara */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Conteúdo dentro da máscara */
+.hero .wrapper .container {
+  position: relative;
+  z-index: 3;
+  color: white;
+  padding-top: 100px; /* ajusta distância do topo */
+}
+
+
+    @media (max-width: 768px) {
+      .mb-1{
+       padding-top: 70px;
+      
+        }
+   .parallax_section_1 {
+
+  padding-bottom: 200px;
+}
+
+.comment {
+    font-size: 14px;
+}
+}
+@media (min-width: 992px) {
+  .qty-buttons input[type="text"] {
+    width: 90px !important;   /* Força uma largura boa no desktop */
+    min-width: 90px !important;
+    text-align: center;
+    font-size: 16px;
+    height: 42px;
+    display: inline-block;
+  }
+
+  .qty-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px; /* Dá um espacinho entre os botões e o número */
+  }
+
+  .qty-buttons input[type="button"] {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+    line-height: 1;
+    padding: 0;
+  }
+}
+
+</style>
 <body>
 
-    <div id="preloader">
-        <div data-loader="circle-side"></div>
-    </div><!-- /Page Preload -->
-
-   <header class="fixed_header menu_v4 submenu_version">
+    <header class="fixed_header menu_v4 submenu_version" style="background-color: white; color: black;"> 
         <div class="layer"></div><!-- Opacity Mask -->
         <div class="container">
-            <div class="row align-items-center">
-
-
-<div class="col-3">
+            <div class="row align-items-center" style="color: black;">
+                <div class="col-3">
                     <a href="index.html" class="logo_normal"><img src="img/logo-pousadap-removebg-preview.png"
                             width="170" height="45" alt=""></a>
                     <a href="index.html" class="logo_sticky"><img src="img/logo-pousadap-removebg-preview.png"
                             width="170" height="45" alt=""></a>
                 </div>
-
                 <div class="col-9">
-                    <div class="main-menu">
+                    <div class="main-menu" style="color: black;">
                         <a href="#0" class="closebt open_close_menu"><i class="bi bi-x"></i></a>
-
-
+                        <div class="logo_panel"><img src="img/logo-pousadap-removebg-preview.png" width="170"
+                                height="45" alt=""></div>
                         <nav id="mainNav">
-                            <ul>
+                            <ul style="color: black;">
                                 <li class="submenu">
                                     <a href="index.html" class="show-submenu">Home</a>
                                 </li>
@@ -65,19 +142,18 @@
                                     <a href="room-list-1.html" class="show-submenu">Quartos e Suites</a>
                                 </li>
                                 <li class="submenu">
-                                    <a href="#0" class="show-submenu">Outras Páginas</a>
-                                    <ul>
-                                        <li><a href="restaurant.html">Restaurante</a></li>
-                                    </ul>
+                        
+                                        <a href="restaurant.html">Restaurante</a></li>
+                                    
                                 </li>
                                 <li><a href="about.html">Sobre</a></li>
                                 <li><a href="contacts.html">Contato</a></li>
-                                <li><a href="https://wa.me/557988827894?text=Olá,%20gostaria%20de%20reservar%20um%20quarto.%20Por%20favor,%20me%20informe%20disponibilidade%20e%20preços." class="btn_1">Reserve agora</a></li>
+                                <li><a href="https://wa.me/5575988827894?text=Olá,%20gostaria%20de%20reservar%20um%20quarto.%20Por%20favor,%20me%20informe%20disponibilidade%20e%20preços." class="btn_1">Reserve agora</a></li>
                             </ul>
                         </nav>
                     </div>
-                    <div class="hamburger_2 open_close_menu float-end">
-                        <div class="hamburger__box">
+                    <div class="hamburger_2 open_close_menu float-end" style="color: black;">
+                        <div class="hamburger__box" >
                             <div class="hamburger__inner"></div>
                         </div>
                     </div>
@@ -87,241 +163,431 @@
     </header><!-- End Header -->
 
     <main>
-      <!-- /Background Img Parallax -->
-
-        <div class="hero small-height jarallax" data-jarallax data-speed="0.2">
-           
-          <img class="jarallax-img" src="img/midia/frente da pousada.jpg" alt="">
+        <div class="hero home-search full-height jarallax"
+            data-speed="0.2"> <img src="img/midia/frente da pousada.jpg" alt="" width="100%" style="margin-top:90px;">
             <div class="wrapper opacity-mask d-flex align-items-center justify-content-center text-center animate_hero"
-                data-opacity-mask="rgba(0, 0, 0, 0.5)">
+                data-opacity-mask="rgba(0, 0, 0, 0.6)" >
                 <div class="container">
-                    <small class="slide-animated one">Experiência em Hotel de Luxo</small>
-                    <h1 class="slide-animated two">Sobre Pousada Santa Maria</h1>
-                </div>
+                     <small class="slide-animated one">Excelência em hospedagem</small> 
+                    <h3 class="slide-animated two" >Uma Experiência Única<br>Onde se Hospedar</h3>
+                    <div class="row justify-content-center slide-animated three">
+                        <div class="col-xl-10">
+                            <div class="row g-0 booking_form" style="text-align: center;">
+                         
+   <form id="formReserva">
+    <div class="row align-items-center">
+        <div class="col-lg-4">
+            <div class="form-group">
+                <input class="form-control" type="text" name="dates" id="dates" placeholder="Check in / Check out" readonly="readonly">
+                <i class="bi bi-calendar2"></i>
             </div>
         </div>
-        <!-- /Background Img Parallax -->
+
+        <div class="col-lg-2 col-sm-6 pe-lg-0 pe-sm-1">
+            <div class="qty-buttons">
+                <label>Adultos</label>
+                <input type="button" value="+" class="qtyplus" name="adults" onclick="alterarQuantidade('adults', 1)">
+                <input type="text" name="adults" id="adults" value="0" class="qty form-control" >
+                <input type="button" value="-" class="qtyminus" name="adults" onclick="alterarQuantidade('adults', -1)" >
+            </div>
+        </div>
+<br>
+        <div class="col-lg-2 col-sm-6 ps-lg-0 ps-sm-1">
+            <div class="qty-buttons">
+                <label>Crianças</label>
+                <input type="button" value="+" class="qtyplus" name="childs" onclick="alterarQuantidade('childs', 1)">
+                <input type="text" name="childs" id="childs" value="0" class="qty form-control">
+                <input type="button" value="-" class="qtyminus" name="childs" onclick="alterarQuantidade('childs', -1)">
+            </div>
+        </div>
+
+        <div class="col-lg-3 text-center">
+            <input type="button" class="btn_search btn btn-primary" value="Reservar quarto!" style="border-radius: 10px; padding: 10px 20px; background-color: red; color:white;" onclick="enviarWhatsApp()">
+        </div>
+    </div>
+</form>
+
+<script>
+    // Função para alterar a quantidade
+    function alterarQuantidade(tipo, valor) {
+        var campo = document.getElementById(tipo); // pega o campo de input
+        var valorAtual = parseInt(campo.value); // pega o valor atual do campo
+
+        // Aumenta ou diminui o valor, sem deixar ficar abaixo de 0
+        if (valorAtual + valor >= 0) {
+            campo.value = valorAtual + valor;
+        }
+    }
+
+    // Função para enviar os dados para o WhatsApp
+  function enviarWhatsApp() {
+    var dates = document.getElementById('dates').value;
+    var adults = document.getElementById('adults').value;
+    var childs = document.getElementById('childs').value;
+
+    // Converter para DD/MM/YYYY - usando o separador " - " do range picker
+    if (dates.includes(" - ")) {
+        let partes = dates.split(" - ");
+
+        let checkin = formatarData(partes[0]);
+        let checkout = formatarData(partes[1]);
+
+        dates = `${checkin} até ${checkout}`;
+    }
+
+    var mensagem = `Olá! 😊
+Gostaria de solicitar uma reserva e aqui estão os dados completos:
+
+📅 *Período da Estadia:* ${dates}
+👨‍🦱 *Número de Adultos:* ${adults}
+🧒 *Número de Crianças:* ${childs}
+
+Poderia, por favor, verificar a disponibilidade para essas datas e me informar os próximos passos para confirmar a reserva?
+Obrigado(a)!`;
 
 
-        <div class="container margin_120_95">
-            <div class="row justify-content-between align-items-center">
-                <div class="col-lg-5">
-                    <div class="parallax_wrapper inverted">
-                        <img src="img/midia/frente da pousada.jpg" alt="" class="img-fluid rounded-img">
-                        <div data-cue="slideInUp" class="img_over"><span data-jarallax-element="-30"><img
-                                    src="img/midia/corredor.jpg" alt="" class="rounded-img"></span></div>
+    var numeroWhatsApp = "5575988827894";
+    var urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+    
+    window.open(urlWhatsApp, "_blank");
+}
+
+function formatarData(dataOriginal) {
+    let partes = dataOriginal.split("/"); 
+    return `${partes[1]}/${partes[0]}/${partes[2]}`; // MM/DD/YYYY → DD/MM/YYYY
+}
+
+</script>
+
+
+<style>
+    
+</style>
+
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-5">
-                    <div class="intro">
-                        <div class="title">
-                            <small>Pousada Santa Maria</small>
-                            <h2>Hossa Histótia</h2>
+               
+                <!-- /mouse_wp -->
+            </div>
+        </div>
+        <!-- /jarallax video background -->
+
+        <div class="pattern_2">
+            <div class="container margin_120_95" id="first_section">
+                <div class="row justify-content-between flex-lg-row-reverse align-items-center">
+                    <div class="col-lg-5">
+                        <div class="parallax_wrapper">
+                            <img src="img/midia/cama solteiro e casal.jpg" alt="" class="img-fluid rounded-img">
+                            <div data-cue="slideInUp" class="img_over"><span data-jarallax-element="-30"><img
+                                        src="img/midia/higiene.jpg" alt="" class="rounded-img"></span></div>
                         </div>
-                        <p class="lead">Somos movidos pela busca da perfeição e pela dedicação em oferecer uma
-                            experiência única, onde cada detalhe é pensado para seu conforto e bem-estar.
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="intro">
+                            <div class="title">
+                                <small>Sobre nós</small>
+                                <h2>Serviços personalizados e a experiência de férias únicas</h2>
+                            </div>
+                            <p class="lead">Nossa pousada oferece conforto e tranquilidade para tornar sua estadia
+                                inesquecível.</p>
+                            <p>Desfrute de acomodações aconchegantes, atendimento personalizado e uma experiência única
+                                em meio à natureza. Cada detalhe é pensado para proporcionar momentos especiais e
+                                relaxantes.</p>
+                            <p><em>Maria – Proprietária</em></p>
 
-                            Nossa missão é transformar sua estadia em momentos inesquecíveis, com atendimento acolhedor,
-                            ambiente encantador e serviços que surpreendem.
-
-                            Afinal, você merece mais do que apenas uma hospedagem: merece cuidado, atenção e uma
-                            experiência memorável.</p>
-                        <p><em>Aloizio...o Proprietario</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pinned-image pinned-image--medium">
+                <div class="pinned-image__container" id="section_video">
+                    <img src="img/midia/mesa de computador.jpg" alt="">
+                    <div class="pinned-image__container-overlay"></div>
+                </div>
+                <div class="pinned_over_content">
+                    <div class="title white">
+                        <small data-cue="slideInUp" data-delay="200">Excelência em hospedagem</small>
+                        <h2 data-cue="slideInUp" data-delay="300">Desfrute de um<br> Relaxamento Imersivo</h2>
+                    </div>
+                </div>
+        </div>
+        <div class="container margin_120_95">
+            <div class="title mb-3">
+                <small data-cue="slideInUp">Experiência de luxo</small>
+                <h2 data-cue="slideInUp" data-delay="200">Quartos e suítes</h2>
+            </div>
+            <div class="row justify-content-center add_bottom_90" data-cues="slideInUp" data-delay="300">
+                <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                    <a href="room-list-1.html" class="box_cat_rooms" width="10%">
+                        <figure>
+                            <img src="img/midia/solteiro.jpg" alt="" width="100%">
+                            <div class="info">
+                                <small>De $120/noite</small>
+                                <h3>Junior Suite</h3>
+                                <span>Veja mais</span>
+                            </div>
+                        </figure>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                    <a href="room-list-1.html" class="box_cat_rooms">
+                        <figure>
+                             <img src="img/midia/cama casal.jpg" alt="" width="100%">
+                            <div class="info">
+                                <small>De $190/noite</small>
+                                <h3>luxo</h3>
+                                <span>Veja mais</span>
+                            </div>
+                        </figure>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                    <a href="room-list-1.html" class="box_cat_rooms">
+                        <figure>
+                             <img src="img/midia/cama casal e arcodicionado.jpg" alt="" width="100%">
+                            <div class="info">
+                                <small>De $240/noite</small>
+                                <h3>quarto</h3>
+                                <span>Veja mais</span>
+                            </div>
+                        </figure>
+                    </a>
+                </div>
+                <p class="text-end"><a href="room-list-1.html" class="btn_1 outline mt-2">veja todos os quartos</a></p>
+            </div>
+            <!-- /row-->
+            <div class="title text-center mb-5">
+                <small data-cue="slideInUp">Pousada Santa Maria</small>
+                <h2 data-cue="slideInUp" data-delay="100">Principais instalações</h2>
+            </div>
+            <div class="row mt-4">
+                <div class="col-xl-3 col-md-6">
+                    <div class="box_facilities no-border" data-cue="slideInUp">
+                        <i class="customicon-private-parking"></i>
+                        <h3>Estacionamento Privado</h3>
+                        <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="box_facilities" data-cue="slideInUp">
+                        <i class="customicon-wifi"></i>
+                        <h3>Wi-Fi de alta velocidade</h3>
+                        <p>Garanta praticidade e segurança com vagas exclusivas dentro do hotel, oferecendo mais
+                            conforto para sua estadia.</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="box_facilities" data-cue="slideInUp">
+                        <i class="customicon-cocktail"></i>
+                        <h3>Bar e Restaurante</h3>
+                        <p>Fique sempre conectado com internet rápida e estável em todos os ambientes, ideal para
+                            trabalho ou lazer.</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="box_facilities" data-cue="slideInUp">
+                        <i class="customicon-swimming-pool"></i>
+                        <h3></h3>
+                        <p>Desfrute de uma experiência gastronômica completa, com pratos selecionados e drinks especiais
+                            em um ambiente sofisticado.
+                        </p>
                     </div>
                 </div>
             </div>
             <!-- /Row -->
         </div>
-        <!-- /container -->
+        <!-- /container-->
 
+      
+        <!-- /marquee-->
         <div class="bg_white">
             <div class="container margin_120_95">
-                <div>
-                    <div class="row justify-content-between">
-                        <div class="col-lg-5 fixed_title">
-                            <div class="title">
-                                <small>Pousada Santa Maria</small>
-                                <h2>Comodidades e Atrações Próximas</h2>
-                                <p>Hospede-se com conforto e aproveite a praticidade de estar próximo a mercados,
-                                    farmácias e lojas locais, tudo acessível em poucos minutos da pousada. A
-                                    tranquilidade do campo com a conveniência da cidade. </p>
-                            </div>
-                            <div class="list_ok">
-                                <ul>
-                                    <li data-cue="slideInUp" data-delay="200">
-                                        <h5>Local Restaurantes</h5>
-                                        <p>A culinária local é um convite ao paladar. Próximo à pousada, você encontra
-                                            restaurantes e cafés com pratos típicos da região, feitos com ingredientes
-                                            frescos e aquele toque caseiro que faz toda a diferença.</p>
-                                    </li>
-                                    <li data-cue="slideInUp" data-delay="300">
-                                        <h5>Natureza e Paisagens</h5>
-                                        <p>Desfrute de belas paisagens naturais, trilhas leves, rios e áreas verdes
-                                            ideais para momentos de descanso, contemplação e conexão com a natureza. Um
-                                            refúgio perfeito para quem busca paz e ar puro.</p>
-                                    </li>
-                                    <li data-cue="slideInUp" data-delay="400">
-                                        <h5> Arte, Cultura e Tradições</h5>
-                                        <p>A região é rica em história e cultura. Visite artesanatos locais, feiras
-                                            culturais e eventos tradicionais que revelam a essência do povo e das raízes
-                                            que fazem da Pousada Santa Maria um lugar especial.
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 ">
-                            <div data-cue="fadeIn" data-delay="500">
-                        <figure>
-          <img class="jarallax-img" src="img/midia/frente da pousada.jpg" alt="" width="100%">
-                                </figure>
-                            </div>
-                            <div data-cue="fadeIn" data-delay="500">
-                                <figure>
-                                    <img src="img/midia/sacada pousada.jpg" alt="" class="img-fluid rounded-img">
-                                </figure>
-                            </div>
-                            <div data-cue="fadeIn" data-delay="500">
-                                <figure>
-                                     <figure><img src="img/midia/higiene.jpg" alt="" class="img-fluid rounded-img">
-                                </figure>
+                <div class="row justify-content-between d-flex align-items-center add_bottom_90">
+                    <div class="col-lg-6">
+                        <div class="pinned-image rounded_container pinned-image--small mb-4">
+                            <div class="pinned-image__container">
+                                <img src="img/midia/restaurante1.jpeg" alt="">
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-5">
+                        <div class="title">
+                            <small>Comodidades locais</small>
+                            <h3>Restaurantes</h3>
+                            <p>Descubra uma variedade de opções gastronômicas próximas para aproveitar durante sua estadia. Dos sabores tradicionais aos pratos contemporâneos, há algo para todos os gostos.
+
+.</p>
+                            <p><a href="restaurant.html" class="btn_1 mt-1 outline">Veja mais</a></p>
+                        </div>
+                    </div>
                 </div>
+                <!-- /row-->
+                
+                <!-- /row-->
             </div>
             <!-- /container-->
         </div>
         <!-- /bg_white -->
-        <!-- /parallax_section_1-->
 
-        <div class="container margin_120_95">
-            <!-- /Row -->
-            <hr class="more_margin">
-            <div class="row justify-content-between margin_60_0">
-                <div class="col-lg-4">
-                    <div class="title">
-                        <small> Pousada Santa Maria – Dúvidas Frequentes</small>
-                        <h3> Perguntas Frequentes</h3>
+        <div class="parallax_section_1 jarallax" data-jarallax data-speed="0.2">
+            <img class="jarallax-img kenburns-2" src="img/midia/frente da pousada.jpg" alt="" >
+            <div class="wrapper opacity-mask d-flex align-items-center justify-content-center text-center"
+                data-opacity-mask="rgba(0, 0, 0, 0.5)" >
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8" >
+                            <div class="title white">
+                                <small class="mb-1">Depoiemntos</small  >
+                                <h2>O que nossos clientes dizem</h2>
+                            </div>
+                            <div class="carousel_testimonials owl-carousel owl-theme nav-dots-orizontal">
+                                <div>
+                                    <div class="box_overlay">
+                                        <div class="pic">
+                                            <figure><img src="img/Clarice.jpg" alt="" class="img-circle">
+                                            </figure>
+                                            <h4>Clarice Soares<small></small></h4>
+                                        </div>
+                                        <div class="comment">
+                                            Estadia incrível!
+                                            "A pousada é aconchegante, com atendimento impecável e uma localização
+                                            perfeita. Tudo muito limpo e bem cuidado, sem contar o café da manhã
+                                            delicioso e variado. Com certeza voltarei e recomendarei!"
+                                        </div>
+                                    </div>
+                                    <!-- End box_overlay -->
+                                </div>
+                                <div>
+                                    <div class="box_overlay">
+                                        <div class="pic">
+                                            <figure><img src="img/mario.jpg" alt="" class="img-circle">
+                                            </figure>
+                                            <h4>Mário <small>Romeu</small></h4>
+                                        </div>
+                                        <div class="comment">
+
+
+                                            Pousada Santa Maria! Um ambiente extremamente acolhedor, pessoas agradáveis
+                                            e competentes, quartos limpos e confortáveis, um café da manhã bastante
+                                            satisfatório, um lugar que faz jus ao seu slogan: “Quem conhece, nunca
+                                            esquece”. Parabéns pela excelência no que faz! 
+                                        </div>
+                                    </div>
+                                    <!-- End box_overlay -->
+                                </div>
+                                <div>
+                                    <div class="box_overlay">
+                                        <div class="pic">
+                                            <figure><img src="img/Larissa.jpg" alt="" class="img-circle">
+                                            </figure>
+                                            <h4>Larissa Denise <small></small></h4>
+                                        </div>
+                                        <div class="comment">
+                                            Excelente atendimento via WhatsApp, me ajudou em questão de transportes,
+                                            apartamentos organizados, perfumado, e uma recepção maravilhosa!
+                                        </div>
+                                    </div>
+                                    <!-- End box_overlay -->
+                                </div>
+                                <div>
+                                    <div class="box_overlay">
+                                        <div class="pic">
+                                            <figure><img src="img/marcel.jpg" alt="" class="img-circle">
+                                            </figure>
+                                            <h4>Marcel<small></small></h4>
+                                        </div>
+                                        <div class="comment">
+                                            Pousada com ótima estrutura, bem localizada, ambiente limpo e agradável,
+                                            refeitório climatizado, ótimo custo X benefício dentro de Jeremoabo.
+                                        </div>
+                                    </div>
+                                    <!-- End box_overlay -->
+                                </div>
+
+                                <!-- End box_overlay -->
+                            </div>
+                        </div>
+                        <!-- End carousel_testimonials -->
                     </div>
-                    <p>Não encontrou sua pergunta na lista? Fale com a gente, teremos prazer em te ajudar!</p>
-                    <p><a href="contacts.html" class="animated_link"><strong>Contate-nos <i
-                                    class="bi bi-arrow-right"></i></strong></a></p>
-                </div>
-                <div class="col-lg-7">
-                    <div role="tablist" class="mb-5 accordion" id="faq">
-                        <div class="card">
-                            <div class="card-header" role="tab">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-bs-toggle="collapse" href="#collapseOne_product"
-                                        aria-expanded="false">
-                                        <i class="indicator bi-plus-lg"></i> Cancelamento — Política da Pousada Santa
-                                        Maria
-                                    </a>
-                                </h5>
-                            </div>
-                            <div id="collapseOne_product" class="collapse" role="tabpanel" data-bs-parent="#faq">
-                                <div class="card-body">
-                                    <p> Cancelamentos com até 7 dias de antecedência podem ser reembolsados ou
-                                        reagendados.
-
-                                        Cancelamentos feitos em prazo menor estão sujeitos a cobrança parcial.
-
-                                        Para mais informações, fale conosco.</p>
-                                    <p></p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /card -->
-                        <div class="card">
-                            <div class="card-header" role="tab">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-bs-toggle="collapse" href="#collapseTwo_product"
-                                        aria-expanded="false">
-                                        <i class="indicator bi-plus-lg"></i>Pagamentos
-                                    </a>
-                                </h5>
-                            </div>
-                            <div id="collapseTwo_product" class="collapse" role="tabpanel" data-bs-parent="#faq">
-                                <div class="card-body">
-                                    <p>Na Pousada Santa Maria, buscamos oferecer a você a maior comodidade e segurança
-                                        na hora de realizar seu pagamento. Aceitamos diversas formas, como cartões de
-                                        crédito e débito, transferência bancária, PIX e pagamentos em dinheiro.</p>
-                                    <p>O pagamento pode ser efetuado no momento da reserva ou na chegada, conforme
-                                        combinado. Para garantir sua estadia, solicitamos um depósito antecipado de 30%
-                                        do valor total da reserva.
-
-                                        Se tiver dúvidas ou precisar de condições especiais, entre em contato conosco.
-                                        Estamos sempre prontos para ajudar e tornar sua experiência conosco a melhor
-                                        possível!
-
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /card -->
-                        <div class="card">
-                            <div class="card-header" role="tab">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-bs-toggle="collapse" href="#collapseThree_product"
-                                        aria-expanded="false">
-                                        <i class="indicator bi-plus-lg"></i>Regras de Check-in e Check-out
-                                    </a>
-                                </h5>
-                            </div>
-                            <div id="collapseThree_product" class="collapse" role="tabpanel" data-bs-parent="#faq">
-                                <div class="card-body">
-                                    <p>Regras de Check-in e Check-out
-
-                                        Para garantir o conforto de todos os nossos hóspedes, pedimos a gentileza de
-                                        observar os horários de check-in e check-out da Pousada Santa Maria.
-
-                                        Check-in: a partir das 14h
-
-                                        Check-out: até às 12h</p>
-                                    <p>Caso precise de um horário diferente, entre em contato conosco com antecedência.
-                                        Faremos o possível para atender sua solicitação, sujeito à disponibilidade.
-
-                                        Lembre-se de apresentar um documento de identificação válido no momento do
-                                        check-in. Reservas não confirmadas até as 18h poderão ser canceladas.
-
-                                        Agradecemos pela compreensão e desejamos uma ótima estadia!</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /card -->
-                        <div class="card">
-                            <div class="card-header" role="tab">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-bs-toggle="collapse" href="#collapseFour_product"
-                                        aria-expanded="false">
-                                        <i class="indicator bi-plus-lg"></i>Suspensão de Acesso
-                                    </a>
-                                </h5>
-                            </div>
-                            <div id="collapseFour_product" class="collapse" role="tabpanel" data-bs-parent="#faq">
-                                <div class="card-body">
-                                    <p>A Pousada Santa Maria reserva-se o direito de suspender ou cancelar o acesso às
-                                        instalações em casos de descumprimento das normas internas, comportamento
-                                        inadequado ou falta de pagamento das diárias e serviços contratados.</p>
-                                    <p>Em situações de suspensão, o hóspede será comunicado e orientado sobre as
-                                        providências necessárias para regularização da situação.
-
-                                        Nosso objetivo é garantir a segurança e o conforto de todos os hóspedes, por
-                                        isso contamos com a colaboração de todos para o respeito às regras da casa.
-
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /card -->
-                    </div>
-                    <!-- /accordion -->
                 </div>
             </div>
-            <!-- /Row -->
         </div>
-     <!-- /container -->
+        </div>
+        <!-- /parallax_section_1
+        <div class="bg_white">
+            <div class="container margin_120_95">
+                <div class="title mb-3">
+                    <small data-cue="slideInUp"> Experiência de Luxo</small>
+                    <h2 data-cue="slideInUp" data-delay="200">Notícias & Eventos</h2>
+                </div>
+                <div class="row justify-content-center home">
+                    <div class="item col-xl-4 col-lg-6">
+                        <a href="news-post.html" class="box_contents" data-cue="slideInUp" data-delay="300">
+                            <figure><img src="img/blog-1.jpg" alt="" class="img-fluid"><em>12 jun</em></figure>
+                            <div class="wrapper">
+                                <small>Cultura<span></span></small>
+                                <h2>Alvorada de Jeremoabo: Tradição que emociona e reúne a cidade ao amanhecer</h2>
+                                <em>Saiba mais </em>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item col-xl-4 col-lg-6">
+                        <a href="news-post.html" class="box_contents" data-cue="slideInUp" data-delay="400">
+                            <figure><img src="img/blog-3.jpg" alt="" class="img-fluid"><em>23 Jun</em></figure>
+                            <div class="wrapper">
+                                <small>Evento<span></span></small>
+                                <h2>São João de Jeremoabo: Forró, cultura e tradição no coração do sertão baiano</h2>
+                                <em>Saiba mais</em>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item col-xl-4 col-lg-6">
+                        <a href="news-post.html" class="box_contents" data-cue="slideInUp" data-delay="500">
+                            <figure><img src="img/blog-2.jpg" alt="" class="img-fluid"><em>08 Set</em></figure>
+                            <div class="wrapper">
+                                <small>Religioso<span></span></small>
+                                <h2>Festa da Padroeira Nossa Senhora da Imaculada Conceição: fé e devoção</h2>
+                                <em>Saiba mais</em>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                !--
+                <p class="text-end"><a href="news-1.html" class="btn_1 outline mt-2" data-cue="slideInUp"
+                        data-delay="600">Veja mais eventos</a></p>
+            </div>
+        </div>
+        -->
+
+
+        <div class="container margin_120_95" id="booking_section">
+            <div class="row justify-content-between">
+                <div class="col-xl-4">
+                    <div data-cue="slideInUp">
+                        <div class="title">
+                            <small>Pousada Santa Maria</small>
+                            <h2>Verificar Disponibilidade</h2>
+                        </div>
+                        <p>Desfrute do conforto e da tranquilidade do sertão baiano com um atendimento acolhedor e
+                            ambiente familiar. Nossa pousada oferece quartos aconchegantes, café da manhã regional e
+                            fácil acesso aos principais pontos da cidade. </p>
+                        <p class="phone_element no_borders"><a href="tel://(75) 9 8882-7894"><i
+                                    class="bi bi-telephone"></i><span><em> Informações e Reservas</em>(75) 9 8882-7894</span></a>
+                        </p>
+                    </div>
+                </div>
+             
+
+
+
+                <!-- /col -->
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
     </main>
     <footer class="revealed">
         <div class="footer_bg">
@@ -336,13 +602,15 @@
                         <li>Rua Porfírio - R. Dr. José da Costa Borges, 17 -<br> Centro, Jeremoabo - BA,
                             48540-000<br><br></li>
                         <li><strong><a href="#0">pousadasantamaria@outlook.com.br</a></strong></li>
-                        <li><strong><a href="https://wa.me/5575988827894?text=Olá,%20gostaria%20de%20mais%20informações.">(75) 9 8882-7894</a></strong></li>
+                        <li><strong><a href="#0">(75) 9 8882-7894</a></strong></li>
+
                     </ul>
                     <div class="social">
                         <ul>
-                            <li><a href="https://www.instagram.com/pousadasantamaria12/"><i class="bi bi-instagram"></i></a></li>
-                            <a href="https://wa.me/5575988827894?text=Olá,%20gostaria%20de%20mais%20informações." target="_blank" rel="noopener noreferrer">
-    <i class="bi bi-whatsapp" ></i>
+                            <li><a href="https://www.instagram.com/pousadasantamaria12/"><i
+                                        class="bi bi-instagram"></i></a></li>
+                                                   <a href="https://wa.me/5575988827894?text=Olá,%20gostaria%20de%20mais%20informações." target="_blank" rel="noopener noreferrer">
+    <i class="bi bi-whatsapp"></i>
   </a>
                         </ul>
                     </div>
@@ -352,11 +620,10 @@
                     <div class="footer_links">
                         <ul>
                             <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">Sobre </a></li>
-                            <li><a href="room-list-1.html">Quartos e Suites</a></li>
-                        
+                            <li><a href="about.html">Sobre nós</a></li>
+                            <li><a href="room-list-1.html">Quartos e Suites</a></li>     
                             <li><a href="contacts.html">Contatos</a></li>
-                    
+                            <li><a href="about.html">Termos e condições</a></li>
                         </ul>
                     </div>
                 </div>
@@ -376,24 +643,10 @@
                         <p>Receba as melhores ofertas e promoções, sem spam. Você pode cancelar a inscrição a qualquer
                             momento.</p>
                     </div>
-
                 </div>
 
-   <div class="newsletter-form">
-  <p>Inscreva-se em nossa lista de e-mails para receber as últimas atualizações e ofertas</p>
-  <form method="POST"
-    action="https://script.google.com/macros/s/AKfycbz9Ajk8KWXrR_BxPOHk_Luy-drzIjo9WAmIWNp-Dx-OFM9MFwKJwfqrpHD-lPMgxhc0/exec"
-    id="newsletter-form">
-    <div class="form-group">
-      <input type="email" name="fname" placeholder="Digite seu Email" required>
-      <input type="hidden" name="subject" value="Inscrição Newsletter">
-      <input type="hidden" name="horario" id="newsletter-horario">
-      <button type="submit" class="theme-btn btn-submit">Enviar</button>
-    </div>
-  </form>
-</div>
 
-  
+
 
             </div>
             <!--/row-->
@@ -407,15 +660,22 @@
     </footer>
     <!-- /footer -->
 
-<script src="js/googlesheets.js">
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+    
+    <script src="js/googlesheets.js"></script>
+    <!-- /back to 
+   
 
-</script>
-``
-
-
-    <!-- COMMON SCRIPTS -->
+ COMMON SCRIPTS -->
+<script src="js/enviarEmail.php"></script>
     <script src="js/common_scripts.js"></script>
     <script src="js/common_functions.js"></script>
+    <script src="js/datepicker_search.js"></script>
+    <script src="js/datepicker_inline.js"></script>
     <script src="phpmailer/validate.js"></script>
 
 </body>

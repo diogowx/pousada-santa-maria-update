@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="zxx">
 
 <head>
     <meta charset="utf-8">
@@ -16,7 +16,6 @@
         href="img/apple-touch-icon-114x114-precomposed.png">
     <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144"
         href="img/apple-touch-icon-144x144-precomposed.png">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- GOOGLE WEB FONT-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,96 +32,17 @@
     <!-- YOUR CUSTOM CSS -->
     <link href="css/custom.css" rel="stylesheet">
 </head>
-<style>.hero {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* altura total da tela */
-  overflow: hidden;
-}
 
-/* Imagem de fundo */
-.hero img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%; /* cobre toda a altura da .hero */
-  object-fit: cover; /* mantém proporção sem distorcer */
-  z-index: 1;
-  margin-top: 0 !important;
-}
-
-/* Camada escura */
-.hero .wrapper.opacity-mask {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%; /* cobre toda a imagem */
-  z-index: 2;
-  background-color: rgba(0, 0, 0, 0.6); /* cor da máscara */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-/* Conteúdo dentro da máscara */
-.hero .wrapper .container {
-  position: relative;
-  z-index: 3;
-  color: white;
-  padding-top: 100px; /* ajusta distância do topo */
-}
-
-
-    @media (max-width: 768px) {
-      .mb-1{
-       padding-top: 70px;
-      
-        }
-   .parallax_section_1 {
-
-  padding-bottom: 200px;
-}
-
-.comment {
-    font-size: 14px;
-}
-}
-@media (min-width: 992px) {
-  .qty-buttons input[type="text"] {
-    width: 90px !important;   /* Força uma largura boa no desktop */
-    min-width: 90px !important;
-    text-align: center;
-    font-size: 16px;
-    height: 42px;
-    display: inline-block;
-  }
-
-  .qty-buttons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px; /* Dá um espacinho entre os botões e o número */
-  }
-
-  .qty-buttons input[type="button"] {
-    width: 34px;
-    height: 34px;
-    font-size: 18px;
-    line-height: 1;
-    padding: 0;
-  }
-}
-
-</style>
 <body>
 
-    <header class="fixed_header menu_v4 submenu_version" style="background-color: white; color: black;"> 
+    <div id="preloader">
+        
+    </div><!-- /Page Preload -->
+
+    <header class="fixed_header menu_v4 submenu_version">
         <div class="layer"></div><!-- Opacity Mask -->
         <div class="container">
-            <div class="row align-items-center" style="color: black;">
+            <div class="row align-items-center">
                 <div class="col-3">
                     <a href="index.html" class="logo_normal"><img src="img/logo-pousadap-removebg-preview.png"
                             width="170" height="45" alt=""></a>
@@ -130,12 +50,12 @@
                             width="170" height="45" alt=""></a>
                 </div>
                 <div class="col-9">
-                    <div class="main-menu" style="color: black;">
+                    <div class="main-menu">
                         <a href="#0" class="closebt open_close_menu"><i class="bi bi-x"></i></a>
                         <div class="logo_panel"><img src="img/logo-pousadap-removebg-preview.png" width="170"
                                 height="45" alt=""></div>
                         <nav id="mainNav">
-                            <ul style="color: black;">
+                            <ul>
                                 <li class="submenu">
                                     <a href="index.html" class="show-submenu">Home</a>
                                 </li>
@@ -143,16 +63,19 @@
                                     <a href="room-list-1.html" class="show-submenu">Quartos e Suites</a>
                                 </li>
                                 <li class="submenu">
-                                        <a href="restaurant.html">Restaurante</a></li>
+                                    <a href="#0" class="show-submenu">Outras Páginas</a>
+                                    <ul>
+                                        <li><a href="restaurant.html">Restaurante</a></li>
+                                    </ul>
                                 </li>
                                 <li><a href="about.html">Sobre</a></li>
                                 <li><a href="contacts.html">Contato</a></li>
-                                <li><a href="https://wa.me/5575988827894?text=Olá,%20gostaria%20de%20reservar%20um%20quarto.%20Por%20favor,%20me%20informe%20disponibilidade%20e%20preços." class="btn_1">Reserve agora</a></li>
+                                <li><a href="#booking_section" class="btn_1">Reserve agora</a></li>
                             </ul>
                         </nav>
                     </div>
-                    <div class="hamburger_2 open_close_menu float-end" style="color: black;">
-                        <div class="hamburger__box" >
+                    <div class="hamburger_2 open_close_menu float-end">
+                        <div class="hamburger__box">
                             <div class="hamburger__inner"></div>
                         </div>
                     </div>
@@ -163,112 +86,64 @@
 
     <main>
         <div class="hero home-search full-height jarallax"
+            data-jarallax-video="mp4:./video/sunset.mp4,webm:./video/sunset.webm,ogv:./video/sunset.ogv"
             data-speed="0.2"> <img src="img/midia/frente da pousada.jpg" alt="" width="100%" style="margin-top:90px;">
             <div class="wrapper opacity-mask d-flex align-items-center justify-content-center text-center animate_hero"
-                data-opacity-mask="rgba(0, 0, 0, 0.6)" >
+                data-opacity-mask="rgba(0, 0, 0, 0.5)">
                 <div class="container">
-                     <small class="slide-animated one">Excelência em hospedagem</small> 
-                    <h3 class="slide-animated two" >Quem conhece nunca esquece!</h3>
+                    <!-- <small class="slide-animated one">Excelência em hospedagem</small> -->
+                    <h3 class="slide-animated two">Quem conhece nunca esquece!</h3>
                     <div class="row justify-content-center slide-animated three">
                         <div class="col-xl-10">
-                            <div class="row g-0 booking_form" style="text-align: center;">
-                         
-   <form id="formReserva">
-    <div class="row align-items-center">
-        <div class="col-lg-4">
-            <div class="form-group">
-                <input class="form-control" type="text" name="dates" id="dates" placeholder="Check in / Check out" readonly="readonly">
-                <i class="bi bi-calendar2"></i>
-            </div>
-        </div>
-
-        <div class="col-lg-2 col-sm-6 pe-lg-0 pe-sm-1">
-            <div class="qty-buttons">
-                <label>Adultos</label>
-                <input type="button" value="+" class="qtyplus" name="adults" onclick="alterarQuantidade('adults', 1)">
-                <input type="text" name="adults" id="adults" value="0" class="qty form-control" >
-                <input type="button" value="-" class="qtyminus" name="adults" onclick="alterarQuantidade('adults', -1)" >
-            </div>
-        </div>
-<br>
-        <div class="col-lg-2 col-sm-6 ps-lg-0 ps-sm-1">
-            <div class="qty-buttons">
-                <label>Crianças</label>
-                <input type="button" value="+" class="qtyplus" name="childs" onclick="alterarQuantidade('childs', 1)">
-                <input type="text" name="childs" id="childs" value="0" class="qty form-control">
-                <input type="button" value="-" class="qtyminus" name="childs" onclick="alterarQuantidade('childs', -1)">
-            </div>
-        </div>
-
-        <div class="col-lg-3 text-center">
-            <input type="button" class="btn_search btn btn-primary" value="Reservar quarto!" style="border-radius: 10px; padding: 10px 20px; background-color: red; color:white;" onclick="enviarWhatsApp()">
-        </div>
+                            <div class="row g-0 booking_form">
+                              <form id="formReserva">
+  <div class="row">
+    <div class="col-lg-4 ">
+      <div class="form-group">
+        <input class="form-control" type="text" name="dates" id="dates"
+          placeholder="Check in / Check out" readonly="readonly">
+        <i class="bi bi-calendar2"></i>
+      </div>
     </div>
+
+    <div class="col-lg-3 col-sm-6 pe-lg-0 pe-sm-1">
+      <div class="qty-buttons">
+        <label>Adultos</label>
+        <input type="button" value="+" class="qtyplus" name="adults">
+        <input type="text" name="adults" id="adults" value="0" class="qty form-control">
+        <input type="button" value="-" class="qtyminus" name="adults">
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-sm-6 ps-lg-0 ps-sm-1">
+      <div class="qty-buttons">
+        <label>Crianças</label>
+        <input type="button" value="+" class="qtyplus" name="childs">
+        <input type="text" name="childs" id="childs" value="0" class="qty form-control">
+        <input type="button" value="-" class="qtyminus" name="childs">
+      </div>
+    </div>
+
+    <div class="col-lg-2">
+        <button  onclick="enviarFormulario1()" type="submit" class="btn_search">
+         
+            <span></span>
+      <input type="button" class="btn_search" value="Pesquisar"></button>
+    </div>
+  </div>
 </form>
 
-<script>
-    // Função para alterar a quantidade
-    function alterarQuantidade(tipo, valor) {
-        var campo = document.getElementById(tipo); // pega o campo de input
-        var valorAtual = parseInt(campo.value); // pega o valor atual do campo
-
-        // Aumenta ou diminui o valor, sem deixar ficar abaixo de 0
-        if (valorAtual + valor >= 0) {
-            campo.value = valorAtual + valor;
-        }
-    }
-
-    // Função para enviar os dados para o WhatsApp
-  function enviarWhatsApp() {
-    var dates = document.getElementById('dates').value;
-    var adults = document.getElementById('adults').value;
-    var childs = document.getElementById('childs').value;
-
-    // Converter para DD/MM/YYYY - usando o separador " - " do range picker
-    if (dates.includes(" - ")) {
-        let partes = dates.split(" - ");
-
-        let checkin = formatarData(partes[0]);
-        let checkout = formatarData(partes[1]);
-
-        dates = `${checkin} até ${checkout}`;
-    }
-
-    var mensagem = `Olá! 😊
-Gostaria de solicitar uma reserva e aqui estão os dados completos:
-
-📅 *Período da Estadia:* ${dates}
-👨‍🦱 *Número de Adultos:* ${adults}
-🧒 *Número de Crianças:* ${childs}
-
-Poderia, por favor, verificar a disponibilidade para essas datas e me informar os próximos passos para confirmar a reserva?
-Obrigado(a)!`;
-
-
-    var numeroWhatsApp = "5575988827894";
-    var urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
-    
-    window.open(urlWhatsApp, "_blank");
-}
-
-function formatarData(dataOriginal) {
-    let partes = dataOriginal.split("/"); 
-    return `${partes[1]}/${partes[0]}/${partes[2]}`; // MM/DD/YYYY → DD/MM/YYYY
-}
-
-</script>
-
-
-<style>
-    
-</style>
 
 
                             </div>
                         </div>
                     </div>
                 </div>
-               
+                <div class="mouse_wp slide-animated four">
+                    <a href="#first_section" class="btn_scrollto">
+                        <div class="mouse"></div>
+                    </a>
+                </div>
                 <!-- /mouse_wp -->
             </div>
         </div>
@@ -287,17 +162,21 @@ function formatarData(dataOriginal) {
                     <div class="col-lg-5">
                         <div class="intro">
                             <div class="title">
-                                <h2>Hospedagem com café da manhã e a experiência de uma estadia aconchegante. </h2>
+                                <small>Sobre nós</small>
+                                <h2>Serviços personalizados e a experiência de férias únicas</h2>
                             </div>
-                            <p class="lead">Nossa pousada oferece conforto e tranquilidade para tornar sua estadia inesquecível.</p>
-                            <p>Desfrute de acomodações aconchegantes, atendimento de qualidade e uma experiência prazerosa. Seu destino é aqui!</p>
-                          
+                            <p class="lead">Nossa pousada oferece conforto e tranquilidade para tornar sua estadia
+                                inesquecível.</p>
+                            <p>Desfrute de acomodações aconchegantes, atendimento personalizado e uma experiência única
+                                em meio à natureza. Cada detalhe é pensado para proporcionar momentos especiais e
+                                relaxantes.</p>
+                           
 
                         </div>
                     </div>
                 </div>
             </div>
-          
+           
         <div class="container margin_120_95">
             <div class="title mb-3">
                 <small data-cue="slideInUp">Experiência de luxo</small>
@@ -305,11 +184,11 @@ function formatarData(dataOriginal) {
             </div>
             <div class="row justify-content-center add_bottom_90" data-cues="slideInUp" data-delay="300">
                 <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
-                    <a href="room-list-1.html" class="box_cat_rooms" width="10%">
+                    <a href="room-details.html" class="box_cat_rooms">
                         <figure>
-                            <img src="img/midia/cama casal e arcodicionado.jpg" alt="" width="100%">
+                            <img src="img/midia/solteiro.jpg" alt="" width="100%">
                             <div class="info">
-                                <small>Consultar demais valores e disponibilidades</small>
+                                <small>De $120/noite</small>
                                 <h3>Junior Suite</h3>
                                 <span>Veja mais</span>
                             </div>
@@ -317,24 +196,24 @@ function formatarData(dataOriginal) {
                     </a>
                 </div>
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                    <a href="room-list-1.html" class="box_cat_rooms">
+                    <a href="room-details.html" class="box_cat_rooms">
                         <figure>
-                             <img src="img/midia/solteiro.jpg" alt="" width="100%">
+                             <img src="img/midia/cama casal.jpg" alt="" width="100%">
                             <div class="info">
-                                <small>Consultar demais valores e disponibilidades</small>
-                                <h3>Luxo</h3>
+                                <small>De $190/noite</small>
+                                <h3>luxo</h3>
                                 <span>Veja mais</span>
                             </div>
                         </figure>
                     </a>
                 </div>
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                    <a href="room-list-1.html" class="box_cat_rooms">
+                    <a href="room-details.html" class="box_cat_rooms">
                         <figure>
-                             <img src="img/midia/cama casal.jpg" alt="" width="100%">
+                             <img src="img/midia/cama casal e arcodicionado.jpg" alt="" width="100%">
                             <div class="info">
-                                <small>Consultar demais valores e disponibilidades</small>
-                                <h3>Quarto</h3>
+                                <small>De $240/noite</small>
+                                <h3>quarto</h3>
                                 <span>Veja mais</span>
                             </div>
                         </figure>
@@ -348,61 +227,54 @@ function formatarData(dataOriginal) {
                 <h2 data-cue="slideInUp" data-delay="100">Principais instalações</h2>
             </div>
             <div class="row mt-4">
-    <div class="col-xl-3 col-md-6">
-        <div class="box_facilities no-border" data-cue="slideInUp">
-          <i class="fa-solid fa-ice-cube"></i>
-
-<h3>Frigobar</h3>
-            <p>Mais praticidade durante a estadia, ideal para manter bebidas e alimentos sempre gelados.</p>
-        </div>
-    </div>
-
-    <div class="col-xl-3 col-md-6">
-        <div class="box_facilities" data-cue="slideInUp">
-            <i class="fa-solid fa-tv"></i>
-            <h3>TV</h3>
-            <p>Entretenimento garantido com televisão no apartamento para seus momentos de descanso.</p>
-        </div>
-    </div>
-
-    <div class="col-xl-3 col-md-6">
-        <div class="box_facilities" data-cue="slideInUp">
-            <i class="fa-solid fa-wifi"></i>
-            <h3>Wi-Fi de Alta Velocidade</h3>
-            <p>Internet rápida e estável, perfeita para trabalho remoto, estudos ou lazer.</p>
-        </div>
-    </div>
-
-    <div class="col-xl-3 col-md-6">
-        <div class="box_facilities" data-cue="slideInUp">
-            <i class="fa-solid fa-snowflake"></i>
-            <h3>Ar-Condicionado</h3>
-            <p>Ambiente climatizado para garantir conforto em qualquer época do ano.</p>
-        </div>
-    </div>
-
-    <div class="col-xl-3 col-md-6">
-        <div class="box_facilities" data-cue="slideInUp">
-            <i class="fa-solid fa-shower"></i>
-            <h3>Chuveiro Elétrico</h3>
-            <p>Banho quente e relaxante com praticidade e conforto após um dia intenso.</p>
-        </div>
-    </div>
-
-    <div class="col-xl-3 col-md-6">
-        <div class="box_facilities" data-cue="slideInUp">
-            <i class="fa-solid fa-laptop-house"></i>
-            <h3>Mesa Home Office</h3>
-            <p>Espaço ideal para trabalhar com conforto e produtividade durante sua estadia.</p>
-        </div>
-    </div>
-</div>
-
+                <div class="col-xl-3 col-md-6">
+                    <div class="box_facilities no-border" data-cue="slideInUp">
+                        <i class="customicon-private-parking"></i>
+                        <h3>Estacionamento Privado</h3>
+                        <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="box_facilities" data-cue="slideInUp">
+                        <i class="customicon-wifi"></i>
+                        <h3>Wi-Fi de alta velocidade</h3>
+                        <p>Garanta praticidade e segurança com vagas exclusivas dentro do hotel, oferecendo mais
+                            conforto para sua estadia.</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="box_facilities" data-cue="slideInUp">
+                        <i class="customicon-cocktail"></i>
+                        <h3>Bar e Restaurante</h3>
+                        <p>Fique sempre conectado com internet rápida e estável em todos os ambientes, ideal para
+                            trabalho ou lazer.</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="box_facilities" data-cue="slideInUp">
+                        <i class="customicon-swimming-pool"></i>
+                        <h3></h3>
+                        <p>Desfrute de uma experiência gastronômica completa, com pratos selecionados e drinks especiais
+                            em um ambiente sofisticado.
+                        </p>
+                    </div>
+                </div>
+            </div>
             <!-- /Row -->
         </div>
         <!-- /container-->
 
-      
+        <div class="marquee">
+            <div class="track">
+                <div class="content">
+                    <marquee scrollamount="10">
+                        &nbsp;Relaxe • Aproveite • Luxo • Férias • Viagem • Descubra • Experiência &nbsp;
+                        Relaxe • Aproveite • Luxo • Férias • Viagem • Descubra • Experiência
+                    </marquee>
+
+                </div>
+            </div>
+        </div>
         <!-- /marquee-->
         <div class="bg_white">
             <div class="container margin_120_95">
@@ -410,7 +282,7 @@ function formatarData(dataOriginal) {
                     <div class="col-lg-6">
                         <div class="pinned-image rounded_container pinned-image--small mb-4">
                             <div class="pinned-image__container">
-                                <img src="img/midia/restaurante1.jpeg" alt="">
+                                <img src="img/local_amenities_1.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -421,12 +293,31 @@ function formatarData(dataOriginal) {
                             <p>Descubra uma variedade de opções gastronômicas próximas para aproveitar durante sua estadia. Dos sabores tradicionais aos pratos contemporâneos, há algo para todos os gostos.
 
 .</p>
-                            <p><a href="restaurant.html" class="btn_1 mt-1 outline">Veja mais</a></p>
+                            <p><a href="about.html" class="btn_1 mt-1 outline">Veja mais</a></p>
                         </div>
                     </div>
                 </div>
                 <!-- /row-->
-                
+                <div class="row justify-content-between d-flex align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="pinned-image rounded_container pinned-image--small mb-4">
+                            <div class="pinned-image__container">
+                                <img src="img/local_amenities_3.jpg" alt=""> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 order-lg-1">
+                        <div class="title">
+                            <small>Comodidades Locais</small>
+                            <h3>Arte e Cultura</h3>
+                            <p>Explore a rica cena cultural da região, com museus, feiras e exposições de artistas
+                                locais.
+                                Descubra tradições, cores e histórias que tornam sua estadia ainda mais especial.</p>
+                            <p><a href="about.html" class="btn_1 mt-1 outline">Saiba mais</a></p>
+                        </div>
+
+                    </div>
+                </div>
                 <!-- /row-->
             </div>
             <!-- /container-->
@@ -434,14 +325,14 @@ function formatarData(dataOriginal) {
         <!-- /bg_white -->
 
         <div class="parallax_section_1 jarallax" data-jarallax data-speed="0.2">
-            <img class="jarallax-img kenburns-2" src="img/midia/frente da pousada.jpg" alt="" >
+            <img class="jarallax-img kenburns-2" src="img/hero_home_1.jpg" alt="">
             <div class="wrapper opacity-mask d-flex align-items-center justify-content-center text-center"
-                data-opacity-mask="rgba(0, 0, 0, 0.5)" >
+                data-opacity-mask="rgba(0, 0, 0, 0.5)">
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-lg-8" >
+                        <div class="col-lg-8">
                             <div class="title white">
-                                <small class="mb-1">Depoiemntos</small  >
+                                <small class="mb-1">Depoiemntos</small>
                                 <h2>O que nossos clientes dizem</h2>
                             </div>
                             <div class="carousel_testimonials owl-carousel owl-theme nav-dots-orizontal">
@@ -474,7 +365,8 @@ function formatarData(dataOriginal) {
                                             Pousada Santa Maria! Um ambiente extremamente acolhedor, pessoas agradáveis
                                             e competentes, quartos limpos e confortáveis, um café da manhã bastante
                                             satisfatório, um lugar que faz jus ao seu slogan: “Quem conhece, nunca
-                                            esquece”. Parabéns pela excelência no que faz! 
+                                            esquece”. Parabéns pela excelência no que faz! Obrigado pela receptividade e
+                                            o carinho de sempre!
                                         </div>
                                     </div>
                                     <!-- End box_overlay -->
@@ -517,7 +409,7 @@ function formatarData(dataOriginal) {
             </div>
         </div>
         </div>
-        <!-- /parallax_section_1
+        <!-- /parallax_section_1-->
         <div class="bg_white">
             <div class="container margin_120_95">
                 <div class="title mb-3">
@@ -556,12 +448,13 @@ function formatarData(dataOriginal) {
                         </a>
                     </div>
                 </div>
-                !--
+                <!--/row -->
                 <p class="text-end"><a href="news-1.html" class="btn_1 outline mt-2" data-cue="slideInUp"
                         data-delay="600">Veja mais eventos</a></p>
             </div>
+            <!--/container -->
         </div>
-        -->
+        <!--/bg_white -->
 
 
         <div class="container margin_120_95" id="booking_section">
@@ -572,12 +465,61 @@ function formatarData(dataOriginal) {
                             <small>Pousada Santa Maria</small>
                             <h2>Verificar Disponibilidade</h2>
                         </div>
+                        <p>Desfrute do conforto e da tranquilidade do sertão baiano com um atendimento acolhedor e
+                            ambiente familiar. Nossa pousada oferece quartos aconchegantes, café da manhã regional e
+                            fácil acesso aos principais pontos da cidade. </p>
                         <p class="phone_element no_borders"><a href="tel://(75) 9 8882-7894"><i
                                     class="bi bi-telephone"></i><span><em> Informações e Reservas</em>(75) 9 8882-7894</span></a>
                         </p>
                     </div>
                 </div>
-             
+             <form id="formReserva2">
+  <div class="col-xl-7">
+    <div data-cue="slideInUp" data-delay="200">
+      <div class="booking_wrapper">
+        <div class="col-12">
+          <input type="hidden" id="date_booking" name="date_booking" value="12/08/2025 - 15/08/2025">
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="custom_select">
+              <select class="wide" id="room_booking" name="room_booking">
+                <option value="">Selecionar Quarto</option>
+                <option>Quarto Duplo</option>
+                <option>Quarto Luxo</option>
+                <option>Quarto Superior</option>
+                <option>Suíte Júnior</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="row">
+              <div class="col-6">
+                <div class="qty-buttons mb-3 version_2">
+                  <input type="button" value="+" class="qtyplus" name="adults_booking2">
+                  <input type="text" name="adults_booking2" id="adults_booking2" value="0"
+                         class="qty form-control" placeholder="Adultos">
+                  <input type="button" value="-" class="qtyminus" name="adults_booking2">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="mb-3 qty-buttons mb-3 version_2">
+                  <input type="button" value="+" class="qtyplus" name="childs_booking2">
+                  <input type="text" name="childs_booking2" id="childs_booking2" value="0"
+                         class="qty form-control" placeholder="Crianças">
+                  <input type="button" value="-" class="qtyminus" name="childs_booking2">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="text-end mt-4">
+           <button type="submit" class="btn_1 outline">Reservar agora</button>
+      </p>
+    </div>
+  </div>
+</form>
 
 
 
@@ -590,13 +532,18 @@ function formatarData(dataOriginal) {
     <footer class="revealed">
         <div class="footer_bg">
             <div class="gradient_over"></div>
-            <div class="background-image"> <img src="img/midia/frente da pousada.jpg" alt="" width="100%"></div>
+            <div class="background-image" data-background=""></div>
         </div>
         <div class="container">
             <div class="row move_content">
                 <div class="col-lg-4 col-md-12">
                     <h5>Contatos</h5>
                     <ul>
+
+                        <li>Rua Porfírio - R. Dr. José da Costa Borges, 17 -<br> Centro, Jeremoabo - BA, 48540-000<br><br></li>
+                      <!--   <li><strong><a href="#0">pousadasantamaria@outlook.com.br</a></strong></li>
+                        <li><strong><a href="#0">(75) 9 8882-7894</a></strong></li>-->
+
                         <li>Rua Porfírio - R. Dr. José da Costa Borges, 17 -<br> Centro, Jeremoabo - BA,
                             48540-000<br><br></li>
                         <li><strong><a href="#0">pousadasantamaria@outlook.com.br</a></strong></li>
@@ -605,7 +552,7 @@ function formatarData(dataOriginal) {
                     </ul>
                     <div class="social">
                         <ul>
-                            <li><a href="https://www.instagram.com/pousadasantamaria12/"><i
+                            <li><a href="https://www.instagram.com/pousadasantamaria12?igsh=Y29weWk0cjExdjdo"><i
                                         class="bi bi-instagram"></i></a></li>
                                                    <a href="https://wa.me/5575988827894?text=Olá,%20gostaria%20de%20mais%20informações." target="_blank" rel="noopener noreferrer">
     <i class="bi bi-whatsapp"></i>
@@ -644,6 +591,26 @@ function formatarData(dataOriginal) {
                 </div>
 
 
+            <div class="col-lg-3 col-md-6">
+    <div id="newsletter">
+        <h5>Newsletter</h5>
+        <div id="message-newsletter"></div>
+
+       <form method="POST"
+    action="https://script.google.com/macros/s/AKfycbz9Ajk8KWXrR_BxPOHk_Luy-drzIjo9WAmIWNp-Dx-OFM9MFwKJwfqrpHD-lPMgxhc0/exec"
+    id="newsletter-form">
+    <div class="form-group">
+      <input type="email" name="fname" placeholder="Digite seu Email" required>
+      <input type="hidden" name="subject" value="Inscrição Newsletter">
+      <input type="hidden" name="horario" id="newsletter-horario">
+      <button type="submit" class="theme-btn btn-submit">Enviar</button>
+    </div>
+  </form>
+
+        <p>Receba as melhores ofertas e promoções, sem spam. 
+           Você pode cancelar a inscrição a qualquer momento.</p>
+    </div>
+</div>
 
 
             </div>
@@ -652,7 +619,13 @@ function formatarData(dataOriginal) {
         <!--/container-->
         <div class="copy">
             <div class="container">
-                Copyright © 2025 Pousada Santa Maria | Desenvolvido por <a href="https://www.instagram.com/codingtech_ti/">CODINGTECH.</a>
+
+
+               Copyright © 2025 Pousada Santa Maria  | Desenvolvido por <a href="#"></a>
+
+
+                Copyright © 2025 Pousada Santa Maria | Desenvolvido por <a href="#">CODINGTECH.</a>
+
             </div>
         </div>
     </footer>

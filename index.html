@@ -115,6 +115,17 @@
     padding: 0;
   }
 }
+.counter {
+  font-size: 42px;
+  font-weight: 700;
+  color: #c62828; /* vermelho elegante */
+}
+
+.counter + p {
+  font-size: 15px;
+  color: #555;
+  margin-top: 5px;
+}
 
 </style>
 <body>
@@ -207,6 +218,49 @@
 </form>
 
 <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".counter");
+
+  const speed = 200; // quanto menor, mais rápido
+
+  const animateCounters = () => {
+    counters.forEach(counter => {
+      const target = +counter.getAttribute("data-target");
+      const isDecimal = counter.getAttribute("data-target").includes(".");
+      let count = 0;
+
+      const updateCount = () => {
+        const increment = target / speed;
+
+        if (count < target) {
+          count += increment;
+          counter.innerText = isDecimal 
+            ? count.toFixed(2).replace(".", ",") 
+            : Math.floor(count).toLocaleString("pt-BR");
+          requestAnimationFrame(updateCount);
+        } else {
+          counter.innerText = isDecimal 
+            ? target.toFixed(2).replace(".", ",") 
+            : target.toLocaleString("pt-BR");
+        }
+      };
+
+      updateCount();
+    });
+  };
+
+  // Ativa só quando a seção aparecer na tela
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounters();
+        observer.disconnect();
+      }
+    });
+  });
+
+  observer.observe(document.querySelector(".counter"));
+});
     // Função para alterar a quantidade
     function alterarQuantidade(tipo, valor) {
         var campo = document.getElementById(tipo); // pega o campo de input
@@ -273,6 +327,31 @@ function formatarData(dataOriginal) {
             </div>
         </div>
         <!-- /jarallax video background -->
+<div class="container margin_120_95">
+  <div class="row text-center">
+
+    <div class="col-md-3 col-6 mb-4">
+      <h2 class="counter" data-target="4102">0</h2>
+      <p>Reservas realizadas</p>
+    </div>
+
+    <div class="col-md-3 col-6 mb-4">
+      <h2 class="counter" data-target="5278">0</h2>
+      <p>Hóspedes atendidos</p>
+    </div>
+
+    <div class="col-md-3 col-6 mb-4">
+      <h2 class="counter" data-target="9844">0</h2>
+      <p>Diárias realizadas</p>
+    </div>
+
+    <div class="col-md-3 col-6 mb-4">
+      <h2 class="counter" data-target="66.98">0</h2>
+      <p>% de Ocupação</p>
+    </div>
+
+  </div>
+</div>
 
         <div class="pattern_2">
             <div class="container margin_120_95" id="first_section">
@@ -379,7 +458,7 @@ function formatarData(dataOriginal) {
         <div class="box_facilities" data-cue="slideInUp">
             <i class="fa-solid fa-shower"></i>
             <h3>Chuveiro Elétrico</h3>
-            <p>Banho quente e relaxante com praticidade e conforto após um dia intenso.</p>
+            <p>Banho quente e relaxante com praticidade e conforto após um dia intenso.</p> 
         </div>
     </div>
 
@@ -658,7 +737,9 @@ function formatarData(dataOriginal) {
         </svg>
     </div>
     
-    <script src="js/googlesheets.js"></script>
+    <script src="js/googlesheets.js">
+        
+    </script>
     <!-- /back to 
    
 
